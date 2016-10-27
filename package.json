@@ -1,18 +1,16 @@
 {
-  "name": "angular2-webpack-starter",
-  "version": "5.0.5",
-  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
+  "name": "dgleague-ui",
+  "version": "0.1.0",
+  "description": "",
   "keywords": [
-    "angular2",
-    "webpack",
-    "typescript"
+    "disc golf"
   ],
-  "author": "Patrick Stapleton <patrick@angularclass.com>",
-  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
+  "author": "Jon Reckner <jon.reckner@gmail.com>",
+  "homepage": "https://github.com/jreckner/dgLeague-ui",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
-    "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
+    "build:docker": "npm run build:prod && docker build -t dgleague-ui:latest .",
     "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build": "npm run build:dev",
     "ci": "npm run lint && npm test && npm run e2e",
@@ -71,9 +69,11 @@
     "@angularclass/conventions-loader": "^1.0.2",
     "@angularclass/hmr": "~1.2.0",
     "@angularclass/hmr-loader": "~3.0.2",
+    "angular2-template-loader": "^0.5.0",
     "assets-webpack-plugin": "^3.4.0",
     "core-js": "^2.4.1",
     "http-server": "^0.9.0",
+    "ng2-bootstrap": "1.1.16",
     "ie-shim": "^0.1.0",
     "rxjs": "^5.0.0-rc.1",
     "zone.js": "~0.6.17"
@@ -132,13 +132,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/jreckner/dgLeague-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/jreckner/dgLeague-ui/issues"
   },
   "engines": {
-    "node": ">= 4.2.1",
-    "npm": ">= 3"
+    "node": ">= 6.9",
+    "npm": ">= 3.10"
   }
 }
