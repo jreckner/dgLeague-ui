@@ -40,6 +40,11 @@ module.exports = {
     { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/assets/icon/favicon-96x96.png' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/assets/icon/favicon-16x16.png' },
 
+    /** <link> tags for custom favicons **/
+    { rel: 'icon', type: 'image/x-icon', sizes: '32x32', href: '/assets/icon/favicon-32x32.ico' },
+    { rel: 'icon', type: 'image/x-icon', sizes: '96x96', href: '/assets/icon/favicon-96x96.ico' },
+    { rel: 'icon', type: 'image/x-icon', sizes: '16x16', href: '/assets/icon/favicon-16x16.ico' },
+
     /**
      * <link> tags for a Web App Manifest
      */
