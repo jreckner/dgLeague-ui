@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head profile="http://www.w3.org/2005/10/profile">
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title><%= htmlWebpackPlugin.options.title %></title>
-
   <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
-
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
 
-  <!-- base url -->
-  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
+  <%= htmlWebpackPlugin.files.webpackManifest %>
+
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+  <!-- CSS will be injected by webpack here -->
+  <!-- Preload link tags will be injected by webpack here -->
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/bootstrap/themes/bootstrap-cerulean.min.css" />
@@ -23,24 +30,20 @@
 
 <body>
 
-  <app>
+  <app-root>
     <div class="container">
       <div class="row">
         <div class="col-md-12" style="height:100px;"></div>
-        <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
-          <div class="progress-bar progress-bar-striped active" role="progressbar"
-               aria-valuenow="loading" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-            Loading...
+          <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
+            <div class="progress-bar progress-bar-striped active" role="progressbar"
+                 aria-valuenow="loading" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+              Loading...
+            </div>
           </div>
         </div>
-      </div>
     </div>
-  </app>
+  </app-root>
 
-  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
-  <!-- Webpack Dev Server reload -->
-  <script src="/webpack-dev-server.js"></script>
-  <% } %>
-
+  <!-- Scripts will be injected by webpack here -->
 </body>
 </html>
